@@ -1,0 +1,42 @@
+@model List<DeviceType>
+
+<div class="container">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2>Device Types List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a  asp-action="Create" class="btn btn-primary">
+                <i class="bi bi-plus-circle"></i> Create New Device Type
+            </a>
+        </div>
+    </div>
+</div>
+
+<table class="table table-bordered table-striped">
+    <tr>
+        <th>
+            Device Type Name
+        </th>
+        <th>
+            Kafka/MQTT Topic Name
+        </th>
+        <th>
+            DB Table Name
+        </th>
+    </tr>
+    @foreach(var deviceType in Model) { 
+    <tr>
+        <td>
+            @deviceType.name
+        </td>
+        <td>
+            @deviceType.topic_name
+        </td>
+        <td>
+            @deviceType.table_name
+        </td>
+    </tr>
+    }
+</table>
+
