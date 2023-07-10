@@ -1,0 +1,43 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1705.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTU.IoT.Web", "NTU.IoT.Web\NTU.IoT.Web.csproj", "{2EA57382-964D-4F73-AF1A-5910773CB202}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTU.IoT.Models", "NTU.IoT.Models\NTU.IoT.Models.csproj", "{1528DB5E-1EB5-4A97-8C16-8FBD26D991BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTU.IoT.DataAccess", "NTU.IoT.DataAccess\NTU.IoT.DataAccess.csproj", "{B47F5C59-F222-4A5C-9CFF-45750E316DBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTU.IoT.Utility", "NTU.IoT.Utility\NTU.IoT.Utility.csproj", "{F933ACF1-E12B-4225-A391-656C382BFA04}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EA57382-964D-4F73-AF1A-5910773CB202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EA57382-964D-4F73-AF1A-5910773CB202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EA57382-964D-4F73-AF1A-5910773CB202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EA57382-964D-4F73-AF1A-5910773CB202}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1528DB5E-1EB5-4A97-8C16-8FBD26D991BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1528DB5E-1EB5-4A97-8C16-8FBD26D991BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1528DB5E-1EB5-4A97-8C16-8FBD26D991BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1528DB5E-1EB5-4A97-8C16-8FBD26D991BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B47F5C59-F222-4A5C-9CFF-45750E316DBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B47F5C59-F222-4A5C-9CFF-45750E316DBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B47F5C59-F222-4A5C-9CFF-45750E316DBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B47F5C59-F222-4A5C-9CFF-45750E316DBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F933ACF1-E12B-4225-A391-656C382BFA04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F933ACF1-E12B-4225-A391-656C382BFA04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F933ACF1-E12B-4225-A391-656C382BFA04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F933ACF1-E12B-4225-A391-656C382BFA04}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {853A0C3A-9373-443A-AF02-319370E8510A}
+	EndGlobalSection
+EndGlobal
