@@ -2,6 +2,7 @@
 using Npgsql;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using NTU.IoT.Utility;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
         options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+builder.Services.AddSingleton<InfluxDBService>();
 
 var app = builder.Build();
 
@@ -27,6 +29,12 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+
+
+app.MapControllerRoute(
+    name: "areas",
+    pattern: "{area=Admin}/{controller=Home}/{action=Index}/{id?}");
 
 app.MapControllerRoute(
     name: "default",

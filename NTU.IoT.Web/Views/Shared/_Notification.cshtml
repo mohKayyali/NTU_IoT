@@ -1,0 +1,18 @@
+﻿@if (TempData["Notification"] != null)
+{
+    if (TempData["Notification"].ToString() == "Success")
+    {
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+        <script type="text/javascript">toastr.success("Success!");</script>
+
+    }
+    @if (TempData["Notification"].ToString() == "Error")
+    {
+        <h1>Error</h1>
+
+    }
+
+}
+
+
