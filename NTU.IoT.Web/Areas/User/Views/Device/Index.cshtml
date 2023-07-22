@@ -1,0 +1,85 @@
+@model List<Device>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+   
+    <script type="text/javascript">function toggleStatus(id, devicetype, checkbox) {
+
+            
+            var url = '/User/Device/Update?id=' + id + "&devicetype=" + devicetype + '&status=' + checkbox.checked
+
+            $.ajax({
+                url: url,
+                type: 'PUT',
+                contentType: 'application/json',
+                success: function () {
+                    toastr.success("Success!");
+                },
+                error: function (xhr, status, error) {
+
+                    toastr.error("Falied!");
+                   
+                }
+            });
+
+
+        }</script>
+
+    <div class="container pb-4">
+        <div class="row pt-4">
+            <div class="col-6">
+                <h2 class="text-primary ">Device List</h2>
+            </div>
+
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>
+                Device
+            </th>
+            <th>
+                Device Type
+            </th>
+
+            <th>
+                Status
+            </th>
+        </tr>
+        @foreach (var device in Model)
+        {
+            <tr>
+                <td>
+                    @device.Id
+                </td>
+                <td>
+                    @device.DeviceType.name
+                </td>
+
+                <td>
+
+
+                    @if (device.Users?.Count > 0)
+                    {
+                        <label class="switch">
+
+                            <input type="checkbox" onClick=toggleStatus('@device.Id','@device.DeviceType.Id',this) asp-controller="Device" checked>
+                            <span class="slider round"></span>
+                        </label>
+                    }
+                    else
+                    {
+                        <label class="switch">
+                            <input type="checkbox" onClick=toggleStatus('@device.Id','@device.DeviceType.Id',this) asp-controller="Device">
+                            <span class="slider round"></span>
+                        </label>
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+
+
+
+
+

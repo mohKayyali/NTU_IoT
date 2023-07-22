@@ -35,12 +35,25 @@
                             aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
+
                     <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+
                         <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="Admin" asp-controller="DeviceType" asp-action="Index">Device Types</a>
-                            </li>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="Admin" asp-controller="DeviceType" asp-action="Index">Device Types Management</a>
+                                </li>
+                            }
+                            @if (!User.IsInRole("Admin"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link" asp-area="User" asp-controller="Device" asp-action="Index">Devices Management</a>
+                                </li>
+                            }
                         </ul>
+
+                        <partial name="_LoginPartial" />
                     </div>
                 </div>
             </nav>

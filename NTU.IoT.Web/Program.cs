@@ -1,8 +1,9 @@
-﻿using NTU.IoT.DataAccess;
+using NTU.IoT.DataAccess;
 using Npgsql;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using NTU.IoT.Utility;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +11,22 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDBContext>(options =>
         options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddIdentity<IdentityUser,IdentityRole>().AddEntityFrameworkStores<ApplicationDBContext>();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddSingleton<InfluxDBService>();
+builder.Services.AddControllersWithViews().AddRazorPagesOptions(options => {
+    options.Conventions.AddAreaPageRoute("Identity", "/Account/Login", "");
+});
+
+builder.Services.ConfigureApplicationCookie(options => {
+    options.LoginPath = $"/Identity/Account/Login";
+    options.LogoutPath = $"/Identity/Account/Logout";
+    options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
+});
+
+DefaultAdminSetup.CreateDefaultAdmin(builder.Services.BuildServiceProvider());
+
 
 var app = builder.Build();
 
@@ -27,9 +42,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseAuthentication();
 app.UseAuthorization();
-
+app.MapRazorPages();
 
 
 app.MapControllerRoute(

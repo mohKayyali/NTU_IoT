@@ -10,10 +10,12 @@ using NTU.IoT.DataAccess;
 using RestSharp;
 using NTU.IoT.Utility.ChainOfResponsibility;
 using NTU.IoT.Utility;
+using Microsoft.AspNetCore.Authorization;
 
 namespace NTU.IoT.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin")]
     public class DeviceTypeController : Controller
     {
         private readonly ApplicationDBContext _db;
