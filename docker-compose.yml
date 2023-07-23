@@ -2,14 +2,13 @@ version: '3.4'
 
 services:
   ntu.iot.web:
-    image: ${DOCKER_REGISTRY-}ntuiot15
+    image: ${DOCKER_REGISTRY-}ntuio
     build:
       context: .
       dockerfile: NTU.IoT.Web/Dockerfile
     networks:
       - multi-nodes_iot
-    volumes:
-      - dataprotectionkeys:/root/.aspnet/DataProtection-Keys
+    
     ports:
       - "2377:2377" 
 networks:
