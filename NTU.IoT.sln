@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTU.IoT.DataAccess", "NTU.I
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NTU.IoT.Utility", "NTU.IoT.Utility\NTU.IoT.Utility.csproj", "{F933ACF1-E12B-4225-A391-656C382BFA04}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{BE334C8D-5F75-41F0-90A6-7F2C086DDD02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F933ACF1-E12B-4225-A391-656C382BFA04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F933ACF1-E12B-4225-A391-656C382BFA04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F933ACF1-E12B-4225-A391-656C382BFA04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE334C8D-5F75-41F0-90A6-7F2C086DDD02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE334C8D-5F75-41F0-90A6-7F2C086DDD02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE334C8D-5F75-41F0-90A6-7F2C086DDD02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE334C8D-5F75-41F0-90A6-7F2C086DDD02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
