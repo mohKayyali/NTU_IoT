@@ -2,18 +2,19 @@ version: '3.4'
 
 services:
   ntu.iot.web:
-    image: ${DOCKER_REGISTRY-}ntuio
+    image: ${DOCKER_REGISTRY-}ntuio1
     build:
       context: .
       dockerfile: NTU.IoT.Web/Dockerfile
     networks:
       - multi-nodes_iot
-    
     ports:
-      - "2377:2377" 
+      - "2377:2377"
+    volumes:
+      - myapp_secrets:/app/secrets 
 networks:
   multi-nodes_iot:
     external:
       name: multi-nodes_iot
 volumes:
-  dataprotectionkeys:
+  myapp_secrets:
