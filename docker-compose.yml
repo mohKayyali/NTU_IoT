@@ -10,8 +10,6 @@ services:
       - multi-nodes_iot
     ports:
       - "2377:2377"
-    volumes:
-      - myapp_secrets:/app/secrets 
 networks:
   multi-nodes_iot:
     external:
