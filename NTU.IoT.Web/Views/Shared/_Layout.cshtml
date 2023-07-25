@@ -45,7 +45,7 @@
                                     <a class="nav-link" asp-area="Admin" asp-controller="DeviceType" asp-action="Index">Device Types Management</a>
                                 </li>
                             }
-                            @if (!User.IsInRole("Admin"))
+                            @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
                             {
                                 <li class="nav-item">
                                     <a class="nav-link" asp-area="User" asp-controller="Device" asp-action="Index">Devices Management</a>
