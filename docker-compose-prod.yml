@@ -2,12 +2,12 @@
 
 services:
   ntu.iot.web:
-    image: ${DOCKER_REGISTRY-}ntuioprod
+    image: ${DOCKER_REGISTRY-}ntuiot_prod
     build:
       context: .
       dockerfile: NTU.IoT.Web/Dockerfile
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Production
     networks:
       - iot_iot
     ports:

@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   ntu.iot.web:
-    image: ${DOCKER_REGISTRY-}ntuio
+    image: ${DOCKER_REGISTRY-}ntuiot_dev
     build:
       context: .
       dockerfile: NTU.IoT.Web/Dockerfile
