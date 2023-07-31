@@ -7,13 +7,12 @@ services:
       context: .
       dockerfile: NTU.IoT.Web/Dockerfile
     networks:
-      - multi-nodes_iot
+      - iot_iot
     ports:
       - "2377:2377"
 networks:
-  multi-nodes_iot:
+  iot_iot:
     external:
       name: iot_iot
-volumes:
-  myapp_secrets:
+
 
