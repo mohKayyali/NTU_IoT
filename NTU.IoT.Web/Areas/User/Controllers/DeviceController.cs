@@ -60,10 +60,7 @@ namespace NTU.IoT.Web.Areas.User.Controllers
                             if (dbDevice != null && dbDevice.Users!=null)
                                 usrs = dbDevice.Users.Where(u => u.Id == loggedInUsr.Id).ToList();
 
-                            Console.WriteLine("hellllllllo usercount=" + usrs?.Count);
-                            Console.WriteLine("hellllllllo Id=" + dbDevice?.Id);
-                            Console.WriteLine("hellllllllo userid=" + loggedInUsr.Id);
-                            Console.WriteLine("hellllllllo dbDevice.Users?.Count=" + dbDevice?.Users?.Count);
+                            
 
                             var device = new Device
                             {

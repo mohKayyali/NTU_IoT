@@ -19,4 +19,10 @@
   <ItemGroup>
     <ProjectReference Include="..\NTU.IoT.Models\NTU.IoT.Models.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="DbInitializer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DbInitializer\" />
+  </ItemGroup>
 </Project>

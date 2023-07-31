@@ -2,7 +2,7 @@
 
 services:
   ntu.iot.web:
-    image: ${DOCKER_REGISTRY-}ntuio1
+    image: ${DOCKER_REGISTRY-}ntuioProd
     build:
       context: .
       dockerfile: NTU.IoT.Web/Dockerfile

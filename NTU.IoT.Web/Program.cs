@@ -26,8 +26,6 @@ builder.Services.ConfigureApplicationCookie(options => {
     options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
 });
 
-DefaultAdminSetup.CreateDefaultAdmin(builder.Services.BuildServiceProvider());
-
 
 var app = builder.Build();
 
