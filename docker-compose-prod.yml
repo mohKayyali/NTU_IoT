@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: NTU.IoT.Web/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
     networks:
       - iot_iot
     ports:
