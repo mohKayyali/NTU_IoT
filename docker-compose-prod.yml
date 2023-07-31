@@ -2,7 +2,7 @@
 
 services:
   ntu.iot.web:
-    image: ${DOCKER_REGISTRY-}ntuioProd
+    image: ${DOCKER_REGISTRY-}ntuioprod
     build:
       context: .
       dockerfile: NTU.IoT.Web/Dockerfile
@@ -12,7 +12,7 @@ services:
       - "2377:2377"
 networks:
   iot_iot:
-    external:
-      name: iot_iot
+    external: true
+      
 
 

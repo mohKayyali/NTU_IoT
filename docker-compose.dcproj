@@ -14,10 +14,7 @@
     </None>
     <None Include="docker-compose.yml" />
     <None Include=".dockerignore" />
-    <None Include="production\docker-compose-prod.yml" />
-    <None Include="production\docker-compose-prod.override.yml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="production\" />
+    <None Include="docker-compose-prod.yml" />
+    <None Include="docker-compose-prod.override.yml" />
   </ItemGroup>
 </Project>
