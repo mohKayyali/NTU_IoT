@@ -59,6 +59,9 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 await app.RunAsync();
+Console.WriteLine($"Environment: {app.Environment.EnvironmentName}");
+Console.WriteLine($"EnvironmentEnvironmentEnvironmentEnvironmentEnvironment");
+
 
 void SeedDatabase()
 {
