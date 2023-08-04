@@ -60,6 +60,15 @@ app.MapControllerRoute(
 
 Console.WriteLine($"Environment: {app.Environment.EnvironmentName}");
 Console.WriteLine($"EnvironmentEnvironmentEnvironmentEnvironmentEnvironment");
+
+var influxDBSection = app.Configuration.GetSection("InfluxDB");
+
+// Fetch the token value from the configuration
+var influxDBToken = influxDBSection["Token"];
+
+
+Console.WriteLine(influxDBToken.ToString());
+
 await app.RunAsync();
 
 
