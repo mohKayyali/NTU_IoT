@@ -69,6 +69,5 @@
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\content\" />
-    <Content Remove="appsettings.Production.json" />
   </ItemGroup>
 </Project>
