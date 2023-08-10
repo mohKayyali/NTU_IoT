@@ -34,7 +34,7 @@ namespace NTU.IoT.Utility.ChainOfResponsibility
 
                 kafkaBrokerId = kafkaBroker.id;
 
-                var mqttBroker = flows.Where(x => x.type == "Kafka Broker").FirstOrDefault();
+                var mqttBroker = flows.Where(x => x.type == "mqtt-broker").FirstOrDefault();
                 mqttBrokerId = mqttBroker.id;
 
                 var influxDB = flows.Where(x => x.type == "influxdb").FirstOrDefault();
