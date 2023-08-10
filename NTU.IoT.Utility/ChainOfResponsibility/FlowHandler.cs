@@ -1,5 +1,7 @@
 ﻿using System;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using NTU.IoT.Models;
 using RestSharp;
 
@@ -7,6 +9,15 @@ namespace NTU.IoT.Utility.ChainOfResponsibility
 {
 	public class FlowHandlerCreation : AbstractHandler
     {
+        private readonly string _noderedUrl;
+        private readonly IConfiguration _configuration;
+
+        public FlowHandlerCreation(IConfiguration configuration) {
+            _noderedUrl = configuration["NodeRed:Url"];
+            _configuration = configuration;
+
+        }
+
         public override object Handle(object obj)
         {
             System.Diagnostics.Debug.WriteLine("FlowHandler: "+ ((DeviceType)obj).name);
@@ -17,7 +28,7 @@ namespace NTU.IoT.Utility.ChainOfResponsibility
             string mqttBrokerId = "";
             string noSqlDBId = "";
 
-            var client = new RestClient("http://localhost:1880");
+            var client = new RestClient(_noderedUrl);
 
             var request = new RestRequest("flows", Method.Get);
 
