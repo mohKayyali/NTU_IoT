@@ -15,7 +15,6 @@ namespace NTU.IoT.Utility.ChainOfResponsibility
         public FlowHandlerCreation(IConfiguration configuration) {
             _noderedUrl = configuration["NodeRed:Url"];
             _configuration = configuration;
-
         }
 
         public override object Handle(object obj)

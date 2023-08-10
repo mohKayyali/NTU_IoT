@@ -80,7 +80,7 @@ namespace NTU.IoT.Web.Areas.Admin.Controllers
                 try
                 {
 
-                    FlowHandlerCreation flowHandler = new FlowHandlerCreation();
+                    FlowHandlerCreation flowHandler = new FlowHandlerCreation(_configuration);
                     NoSqlMeasurementCreation noSqlMeasurement = new NoSqlMeasurementCreation(_influxService);
                     DeviceTypeCreation deviceTypeCreation = new DeviceTypeCreation(_db);
 
