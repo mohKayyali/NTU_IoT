@@ -16,5 +16,6 @@
     <None Include=".dockerignore" />
     <None Include="docker-compose-prod.yml" />
     <None Include="docker-compose-prod.override.yml" />
+    <None Include="docker-compose-ecosystem.yml" />
   </ItemGroup>
 </Project>
