@@ -8,13 +8,8 @@ services:
     build:
       context: .
       dockerfile: NTU.IoT.Web/Dockerfile
-    networks:
-      - iot_iot
     ports:
       - "2377:2377"
-networks:
-  iot_iot:
-    external: true
       
 
 
