@@ -17,5 +17,6 @@
     <None Include="docker-compose-prod.yml" />
     <None Include="docker-compose-prod.override.yml" />
     <None Include="docker-compose-ecosystem.yml" />
+    <None Include="JenkinsDockerfile" />
   </ItemGroup>
 </Project>
